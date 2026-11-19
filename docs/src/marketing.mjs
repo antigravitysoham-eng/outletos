@@ -128,11 +128,11 @@ export function caseStudy() {
     </div>
     <div><div class="sh">${W('sparkles', 13)}The solution</div>
       <p>OutletOS connected to the systems already in place, gave every role its own live workspace, and added a team of AI agents that answer questions within each role’s access.</p>
-      <ul class="mods">${[['monitor-smartphone', 'POS & billing'], ['boxes', 'Inventory & menu'], ['chef-hat', 'Kitchen operations'], ['cctv', 'Vision intelligence'], ['file-bar-chart', 'Reports, KRIs, forecasts'], ['landmark', 'Finance & compliance'], ['sparkles', 'AI agents & alerts'], ['shield-check', 'Role-based access']].map(([ic, t]) => `<li>${W(ic, 15)}<b>${t}</b></li>`).join('')}</ul>
+      <ul class="mods">${[['monitor-smartphone', 'POS & billing'], ['boxes', 'Inventory & menu'], ['chef-hat', 'Kitchen operations'], ['cctv', 'Vision intelligence'], ['file-bar-chart', 'Reports, KRIs, forecasts'], ['landmark', 'Finance & compliance'], ['sparkles', 'AI agents, alerts & Telegram'], ['shield-check', 'Role-based access']].map(([ic, t]) => `<li>${W(ic, 15)}<b>${t}</b></li>`).join('')}</ul>
     </div>
   </div>
   <div class="tl">
-    ${[['Week 1', 'Connect sales', 'POS and delivery webhooks mapped without code; 7-day history visible.'], ['Week 2', 'People & cold chain', 'Face and fingerprint clock-ins; fridge sensors logging every minute.'], ['Week 3', 'Vision on CCTV', 'Edge box per restaurant on existing cameras; station coverage and access alerts live, PPE in audit.'], ['Week 4', 'Roles, agents, training', '8 roles by branch and station; managers ask Maître instead of building reports.']]
+    ${[['Week 1', 'Connect sales', 'POS and delivery webhooks mapped without code; 7-day history visible.'], ['Week 2', 'People & cold chain', 'Face and fingerprint clock-ins; fridge sensors logging every minute.'], ['Week 3', 'Vision on CCTV', 'Edge box per restaurant on existing cameras; station coverage and access alerts live, PPE in audit.'], ['Week 4', 'Roles, agents, training', '8 roles by branch and station; managers ask Maître in the app or on Telegram instead of building reports.']]
       .map(([w, t, d]) => `<div><i></i><em>${w}</em><b>${t}</b><span>${d}</span></div>`).join('')}
   </div>
   <div class="quote"><p>“For the first time I can see every kitchen, every channel and every regular from one screen, and my chefs only see what they need to cook.”</p><span>Illustrative persona · Group Operations Director</span></div>
@@ -148,7 +148,7 @@ export function caseStudy() {
       .map(([b, e, s, f]) => `<div><b>${b}</b><em>${e}</em><span>${s}</span><div class="f">${f}</div></div>`).join('')}
   </div>
   <div class="targets"><table><thead><tr><th>Pilot KPI</th><th>How OutletOS measures it</th><th>Where to see it</th></tr></thead><tbody>
-    ${[['Prime cost %', 'Food cost from menu costs + labour from clock-ins, ÷ sales', 'Dashboard · Prime cost gauge'], ['TPPH', 'Orders ÷ labour hours, hour by hour, against target', 'Workforce · Staffing & productivity'], ['Kitchen on-time %', 'Dishes ready within their own target time', 'Kitchen Operations'], ['Camera compliance', 'Passed reliable camera checks (coverage, access, queue, pass) per branch', 'Vision Intelligence'], ['Returning-guest share', 'Dine-in orders linked to a known guest', 'Guest Intelligence'], ['Agent adoption', 'Questions answered by agents, by role; every run logged', 'AI Agents · agent_runs log']]
+    ${[['Prime cost %', 'Food cost from menu costs + labour from clock-ins, ÷ sales', 'Dashboard · Prime cost gauge'], ['TPPH', 'Orders ÷ labour hours, hour by hour, against target', 'Workforce · Staffing & productivity'], ['Kitchen on-time %', 'Dishes ready within their own target time', 'Kitchen Operations'], ['Camera compliance', 'Passed reliable camera checks (coverage, access, queue, pass) per branch', 'Vision Intelligence'], ['Returning-guest share', 'Dine-in orders linked to a known guest', 'Guest Intelligence'], ['Agent adoption', 'Questions answered by agents, by role, in the app and on Telegram; every run logged', 'AI Agents · agent_runs log']]
       .map(([a, b, c]) => `<tr><td><b>${a}</b></td><td>${b}</td><td>${c}</td></tr>`).join('')}</tbody></table></div>
   <div class="shots2">
     <div>${frame('04-branches.jpg', [], { crop: [60, 410] })}<div class="cap">Every branch ranked with a live score and today’s sales trend.</div></div>

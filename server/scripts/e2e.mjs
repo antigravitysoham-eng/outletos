@@ -409,6 +409,13 @@ console.log('\nTelegram bot');
   await test('TG14', 'A plain-language question is answered by the AI agents', async () => { const m = await say(7002, 'What is the forecast for next week?'); ok(/forecast/i.test(m.text), m.text); });
   await test('TG15', 'Status for a non-admin hides the token and other users\' links', async () => { const r = (await req('GET', '/api/telegram/status', { token: T['cook.r1'] })).json; ok(r.configured && r.linked.length === 1 && !('links' in r) && !('token' in r), JSON.stringify(r)); });
   await test('TG16', '/unlink disconnects the chat', async () => { await say(7004, '/unlink'); const m = await say(7004, '/kitchen'); ok(/connect/i.test(m.text), m.text); });
+  await test('TG17', 'Webhook without a public address is refused and the saved setup is unchanged', async () => {
+    const before = (await req('GET', '/api/telegram/status', { token: T['it.admin'] })).json;
+    const r = await req('POST', '/api/telegram/config', { token: T['it.admin'], body: { mode: 'webhook', public_url: null, enabled: true } });
+    eq(r.status, 400, 'status'); ok(/public HTTPS address/.test(r.json.error), r.json.error);
+    const after = (await req('GET', '/api/telegram/status', { token: T['it.admin'] })).json;
+    eq(after.mode, before.mode, 'mode'); eq(after.polling, before.polling, 'polling');
+  });
   await req('POST', '/api/telegram/config', { token: T['it.admin'], body: { clear: true } }); // leave the demo without a bot
   fake.close();
 }

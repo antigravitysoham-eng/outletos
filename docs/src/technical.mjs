@@ -142,8 +142,8 @@ const D_CONTEXT = diagram(980, 520, 'Context diagram: eight external systems fee
   return s;
 }, '<b>Everything enters through one door.</b> Eight kinds of restaurant system push data in; the only thing that comes out is a view filtered for the person looking at it. Cameras send detections, never footage.');
 
-const D_ARCH = diagram(980, 600, 'High-level architecture: restaurant systems and the edge agent feed the ingest API inside a single OutletOS server process, which stores events, distributes them live and serves role-filtered read models to the React dashboard.', (id) => {
-  let s = zone(20, 30, 230, 380, 'Restaurant systems') + zone(20, 430, 230, 150, 'Inside each restaurant', 'local') + zone(290, 30, 480, 550, 'OutletOS server · one Node process', 'cloud') + zone(790, 200, 175, 290, 'Users');
+const D_ARCH = diagram(980, 600, 'High-level architecture: restaurant systems and the edge agent feed the ingest API inside a single OutletOS server process, which stores events, distributes them live and serves role-filtered read models to the React dashboard and, through the Telegram gateway, to linked Telegram chats.', (id) => {
+  let s = zone(20, 30, 230, 380, 'Restaurant systems') + zone(20, 430, 230, 150, 'Inside each restaurant', 'local') + zone(290, 30, 480, 550, 'OutletOS server · one Node process', 'cloud') + zone(790, 200, 175, 380, 'Users');
   ['POS / billing', 'Delivery apps', 'Kitchen display', 'Attendance', 'IoT gateways', 'Loyalty'].forEach((t, i) => { const y = 60 + i * 56; s += box(40, y, 190, 40, t) + edge(id, [[230, y + 20], [262, y + 20]], { head: false }); });
   s += `<line x1="262" y1="80" x2="262" y2="360" class="dg-edge"/>` + edge(id, [[262, 85], [310, 85]]);
   s += box(40, 460, 190, 40, 'IP cameras · RTSP') + edge(id, [[135, 500], [135, 520]]) + box(40, 520, 190, 46, 'Edge vision agent', 'YOLO · on-premise', 'live');
@@ -158,8 +158,10 @@ const D_ARCH = diagram(980, 600, 'High-level architecture: restaurant systems an
   s += edge(id, [[310, 458], [300, 458], [300, 185], [310, 185]], { soft: true }) + label(304, 520, 'same write path', 'start');
   s += box(805, 330, 150, 56, 'React dashboard', 'role-adaptive', 'live') + box(805, 420, 150, 50, '8 roles', 'Owner → Line Cook');
   s += edge(id, [[740, 173], [880, 173], [880, 330]]) + label(810, 165, 'live events (SSE)') + edge(id, [[805, 358], [740, 358]], { both: true }) + label(772, 350, 'REST') + edge(id, [[880, 420], [880, 386]]);
+  s += box(520, 508, 220, 56, 'Telegram gateway', 'same tools + policy', 'accent') + edge(id, [[630, 486], [630, 508]], { soft: true });
+  s += box(805, 508, 150, 56, 'Telegram app', 'private chats', 'live') + edge(id, [[805, 536], [740, 536]], { both: true }) + label(772, 528, 'Bot API');
   return s;
-}, '<b>One process, one write path.</b> Integrations, the edge agent and the simulator all call the same canonical ingest functions, so a demo and a production rollout exercise identical code. The policy engine sits in front of every read model and every live event.');
+}, '<b>One process, one write path.</b> Integrations, the edge agent and the simulator all call the same canonical ingest functions, so a demo and a production rollout exercise identical code. The policy engine sits in front of every read model and every live event, including answers sent through the Telegram gateway.');
 
 const D_MODULES = diagram(980, 600, 'Low-level module map of the web client and the server, showing which modules call which.', (id) => {
   let s = zone(20, 20, 940, 200, 'web/src · React client') + zone(20, 250, 940, 330, 'server/src · Node API', 'cloud');

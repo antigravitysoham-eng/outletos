@@ -294,7 +294,7 @@ marketing    capture.mjs (headless screenshots for the guides) · make_promo.py
 ## Testing
 
 ```bash
-node server/scripts/e2e.mjs                                   # 148 API scenarios against the India demo (all roles, all modules, Telegram bot)
+node server/scripts/e2e.mjs                                   # 149 API scenarios against the India demo (all roles, all modules, Telegram bot)
 node server/scripts/e2e.mjs http://localhost:8787             # same suite against the global demo
 node server/scripts/e2e.mjs http://localhost:8789 --onboarding  # 18 onboarding scenarios on a fresh workspace (UAE, VAT-inclusive)
 npm run test:parity                                           # JS and Python vision rule engines produce identical events
@@ -318,7 +318,7 @@ All documents are generated from source, so they stay consistent with the produc
 |---|---|---|
 | Technical Product Document | `docs/OutletOS-Technical-Product-Document.html` / `.pdf` | 19 sections, 16 hand-drawn diagrams. Covers architecture, DFDs, user flows and runtime sequences; AI agents and vision with tiers; operations back office; reporting and forecasting; connectors; instances and onboarding; security, data model, API, deployment and SBOM. |
 | Product Training & User Guide | `docs/OutletOS-Product-Training-Guide.html` / `.pdf` | Step-by-step workspace setup (7 steps), then every screen: POS, reservations, inventory, reports, KRIs, forecast, finance, connectors, vision, AI agents and more. Numbered callouts, daily actions, tips, role views and a glossary. |
-| Test Plan & Results | `docs/OutletOS-Test-Plan-and-Results.html` / `.pdf` | 166 automated scenarios and 31 browser scenarios, with the latest results and the defects fixed |
+| Test Plan & Results | `docs/OutletOS-Test-Plan-and-Results.html` / `.pdf` | 167 automated scenarios and 31 browser scenarios, with the latest results and the defects fixed |
 | Telegram Bot Guide | `docs/OutletOS-Telegram-Bot-Guide.html` / `.pdf` | Admin setup with @BotFather, linking a chat, commands, real example conversations, what each role can ask, approvals, push alerts, security and troubleshooting |
 | Value Proposition | `docs/OutletOS-Value-Proposition.html` / `.pdf` | One-page overview |
 | Case Study | `docs/OutletOS-Case-Study.html` / `.pdf` | Two-page illustrative rollout (clearly labelled; replace with pilot data) |
