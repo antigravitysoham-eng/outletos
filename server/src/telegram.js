@@ -67,13 +67,14 @@ export async function configure(p, body = {}) {
   if (body.mode) c.mode = body.mode === 'webhook' ? 'webhook' : 'polling';
   if (body.public_url !== undefined) c.public_url = body.public_url ? String(body.public_url).trim().replace(/\/$/, '') : null;
   if (body.enabled !== undefined) c.enabled = !!body.enabled;
+  // Validate before saving, so a rejected change never leaves a half-applied config behind.
+  if (c.enabled && c.mode === 'webhook' && !c.public_url) throw err(400, 'Webhook mode needs the public HTTPS address of this server. On localhost, choose Long polling.');
   c.secret ||= randomBytes(16).toString('hex');
   c.header_secret ||= randomBytes(24).toString('hex');
   await stopTransport();
   setSetting('telegram', c);
   if (c.enabled) {
     if (c.mode === 'webhook') {
-      if (!c.public_url) throw err(400, 'Webhook mode needs the public HTTPS address of this server');
       await tg('setWebhook', { url: `${c.public_url}/api/telegram/webhook/${c.secret}`, secret_token: c.header_secret, allowed_updates: ['message', 'callback_query'] });
     } else { await tg('deleteWebhook', {}).catch(() => {}); startTelegram(); }
     await tg('setMyCommands', { commands: COMMANDS.map((x) => ({ command: x.cmd, description: x.desc })) }).catch(() => {});
