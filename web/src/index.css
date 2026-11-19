@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+/* ---------- Palettes (brand colour) ---------- */
+:root { --p-light: #d92d3a; --p-dark: #f2545f; --p2: #f97316; } /* Crimson (default) */
+:root[data-palette="saffron"] { --p-light: #e8590c; --p-dark: #ff8a3d; --p2: #f5b300; }
+:root[data-palette="olive"] { --p-light: #3f7d3a; --p-dark: #6fbf65; --p2: #b5a33a; }
+:root[data-palette="ocean"] { --p-light: #1565c0; --p-dark: #4d9bff; --p2: #06b6d4; }
+:root[data-palette="plum"] { --p-light: #7c3aed; --p-dark: #a78bfa; --p2: #ec4899; }
+:root[data-palette="espresso"] { --p-light: #8b5a2b; --p-dark: #c9925a; --p2: #d4a373; }
+
+/* ---------- Modes ---------- */
+:root {
+  --bg: #f7f5f4; --surface: #ffffff; --surface-2: #f3f0ee; --ink: #1a1214; --muted: #6b5f62; --faint: #a3979a; --line: #ebe5e2;
+  --primary: var(--p-light); --primary-2: var(--p2);
+  --online: #7c5cff; --offline: #f59e0b;
+  --ok: #12b76a; --ok-soft: #e6f7ee; --warn: #f79009; --warn-soft: #fef3e2; --bad: #e11d48; --bad-soft: #ffe4ea; --info: #0ba5ec; --info-soft: #e5f6fd;
+  --side-base: #120a0c; --side-ink: #ecdfe1; --side-muted: #a48f93;
+  --shadow: 0 1px 2px rgb(40 16 20 / 0.05), 0 4px 16px -6px rgb(40 16 20 / 0.10);
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #120d0f; --surface: #1b1416; --surface-2: #241b1e; --ink: #f4ecee; --muted: #b3a2a6; --faint: #7a6a6e; --line: #33282b;
+  --primary: var(--p-dark); --online: #9580ff; --offline: #fbbf24;
+  --ok: #32d583; --ok-soft: #0f2a1e; --warn: #fdb022; --warn-soft: #2e2210; --bad: #fb6f84; --bad-soft: #3a141c; --info: #36bffa; --info-soft: #0b2533;
+  --side-base: #0a0607; --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 6px 20px -8px rgb(0 0 0 / 0.6);
+  color-scheme: dark;
+}
+:root[data-theme="midnight"] {
+  --bg: #000000; --surface: #0b0b0d; --surface-2: #141417; --ink: #f1f1f3; --muted: #9b9ba3; --faint: #5f5f66; --line: #222226;
+  --primary: var(--p-dark); --online: #9580ff; --offline: #fbbf24;
+  --ok: #32d583; --ok-soft: #0c1f16; --warn: #fdb022; --warn-soft: #24190a; --bad: #fb6f84; --bad-soft: #2a0e14; --info: #36bffa; --info-soft: #081c27;
+  --side-base: #000000; --shadow: 0 0 0 1px rgb(255 255 255 / 0.02), 0 8px 24px -10px rgb(0 0 0 / 0.9);
+  color-scheme: dark;
+}
+:root {
+  --primary-soft: color-mix(in srgb, var(--primary) 13%, var(--surface));
+  --side: color-mix(in srgb, var(--primary) 14%, var(--side-base));
+  --side-2: color-mix(in srgb, var(--primary) 24%, var(--side-base));
+}
+
+@theme inline {
+  --color-bg: var(--bg); --color-surface: var(--surface); --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink); --color-muted: var(--muted); --color-faint: var(--faint); --color-line: var(--line);
+  --color-primary: var(--primary); --color-primary-2: var(--primary-2); --color-primary-soft: var(--primary-soft);
+  --color-online: var(--online); --color-offline: var(--offline);
+  --color-ok: var(--ok); --color-ok-soft: var(--ok-soft); --color-warn: var(--warn); --color-warn-soft: var(--warn-soft);
+  --color-bad: var(--bad); --color-bad-soft: var(--bad-soft); --color-info: var(--info); --color-info-soft: var(--info-soft);
+  --color-side: var(--side); --color-side-2: var(--side-2); --color-side-ink: var(--side-ink); --color-side-muted: var(--side-muted);
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --shadow-card: var(--shadow);
+}
+
+html, body, #root { height: 100%; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; letter-spacing: -0.005em; }
+.tnum { font-variant-numeric: tabular-nums; }
+.label { font-size: 12px; font-weight: 600; color: var(--muted); }
+.grad-primary { background: linear-gradient(135deg, var(--primary), var(--primary-2)); }
+.grad-text { background: linear-gradient(135deg, var(--primary), var(--primary-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+::selection { background: var(--primary-soft); }
+* { scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+.live-dot { animation: pulse-dot 1.6s ease-in-out infinite; }
+@keyframes slide-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+.slide-in { animation: slide-in 0.35s ease-out; }
+@media (prefers-reduced-motion: reduce) { .live-dot, .slide-in { animation: none; } }
+
+/* Print / Save as PDF: the report prints as a clean A4 document */
+@media print {
+  @page { size: A4; margin: 12mm; }
+  html, body { background: #fff !important; }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  main { max-width: none !important; padding: 0 !important; }
+  .shadow-card { box-shadow: none !important; }
+  section, table tr { break-inside: avoid; }
+}
+
+/* Sidebar scroll: thin and tinted to the rail instead of the default grey bar */
+.nav-scroll { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--side-muted, #9a8f8f) 35%, transparent) transparent; }
+.nav-scroll::-webkit-scrollbar { width: 6px; }
+.nav-scroll::-webkit-scrollbar-thumb { border-radius: 6px; background: color-mix(in srgb, var(--side-muted, #9a8f8f) 35%, transparent); }
+.nav-scroll-hidden { scrollbar-width: none; }
+.nav-scroll-hidden::-webkit-scrollbar { display: none; }
+
+/* Keyboard focus: a clear ring in the brand colour (mouse clicks don't show it) */
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.skip-link { position: absolute; left: 12px; top: -48px; z-index: 60; transition: top .15s; }
+.skip-link:focus { top: 12px; }
+
+/* Sidebar motion */
+@keyframes drawer-in { from { transform: translateX(-100%); } to { transform: none; } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes tip-in { from { opacity: 0; transform: translate(-4px, -50%); } to { opacity: 1; transform: translate(0, -50%); } }
+.drawer-in { animation: drawer-in .32s cubic-bezier(.32,.72,0,1); }
+.fade-in { animation: fade-in .25s ease-out; }
+.tip-in { animation: tip-in .14s ease-out; }
+@media (prefers-reduced-motion: reduce) { *, ::before, ::after { transition-duration: .01ms !important; animation-duration: .01ms !important; } }

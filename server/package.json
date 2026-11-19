@@ -1,0 +1,20 @@
+{
+  "name": "outletos-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "dev": "node --watch --disable-warning=ExperimentalWarning src/index.js",
+    "start": "node --disable-warning=ExperimentalWarning src/index.js",
+    "dev:india": "node --watch --disable-warning=ExperimentalWarning src/india.js",
+    "start:india": "node --disable-warning=ExperimentalWarning src/india.js",
+    "start:new": "node --disable-warning=ExperimentalWarning src/blank.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.10.0",
+    "express": "^5.3.0"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "outletos",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OutletOS - centralized command center for multi-outlet restaurant groups",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n server,web -c yellow,cyan \"npm:dev -w server\" \"npm:dev -w web\"",
+    "build": "npm run build -w web",
+    "start": "npm run start -w server",
+    "test:parity": "node server/scripts/vision-parity.mjs && python edge-agent/tests/test_parity.py",
+    "start:india": "npm run start:india -w server",
+    "dev:india": "concurrently -k -n india,web -c green,cyan \"npm:dev:india -w server\" \"npm:dev -w web -- --port 5174\"",
+    "start:new": "npm run start:new -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}

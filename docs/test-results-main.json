@@ -1,0 +1,1044 @@
+{
+  "base": "http://localhost:8788",
+  "ran": "2026-11-19T08:56:57.450Z",
+  "passed": 148,
+  "total": 148,
+  "results": [
+    {
+      "id": "A01",
+      "name": "Owner signs in with the demo password",
+      "section": "Authentication",
+      "ok": true,
+      "ms": 148
+    },
+    {
+      "id": "A02",
+      "name": "Wrong password is rejected (401)",
+      "section": "Authentication",
+      "ok": true,
+      "ms": 52
+    },
+    {
+      "id": "A03",
+      "name": "Unknown user is rejected (401)",
+      "section": "Authentication",
+      "ok": true,
+      "ms": 4
+    },
+    {
+      "id": "A04",
+      "name": "API without a token is rejected (401)",
+      "section": "Authentication",
+      "ok": true,
+      "ms": 6
+    },
+    {
+      "id": "A05",
+      "name": "Tampered token is rejected (401)",
+      "section": "Authentication",
+      "ok": true,
+      "ms": 17
+    },
+    {
+      "id": "A06",
+      "name": "All demo roles can sign in",
+      "section": "Authentication",
+      "ok": true,
+      "ms": 902
+    },
+    {
+      "id": "A07",
+      "name": "/me returns instance currency, tax and modules",
+      "section": "Authentication",
+      "ok": true,
+      "ms": 15
+    },
+    {
+      "id": "R01",
+      "name": "Line cook dashboard has no sales or finance fields",
+      "section": "Access control (RBAC + ABAC)",
+      "ok": true,
+      "ms": 121
+    },
+    {
+      "id": "R02",
+      "name": "Line cook report has no revenue KPIs",
+      "section": "Access control (RBAC + ABAC)",
+      "ok": true,
+      "ms": 36
+    },
+    {
+      "id": "R03",
+      "name": "Host cannot open Kitchen (403)",
+      "section": "Access control (RBAC + ABAC)",
+      "ok": true,
+      "ms": 5
+    },
+    {
+      "id": "R04",
+      "name": "Auditor cannot open the POS (403)",
+      "section": "Access control (RBAC + ABAC)",
+      "ok": true,
+      "ms": 17
+    },
+    {
+      "id": "R05",
+      "name": "IT admin has no reports (403)",
+      "section": "Access control (RBAC + ABAC)",
+      "ok": true,
+      "ms": 18
+    },
+    {
+      "id": "R06",
+      "name": "Branch manager cannot read another branch (403)",
+      "section": "Access control (RBAC + ABAC)",
+      "ok": true,
+      "ms": 2
+    },
+    {
+      "id": "R07",
+      "name": "Area manager sees only their region",
+      "section": "Access control (RBAC + ABAC)",
+      "ok": true,
+      "ms": 15
+    },
+    {
+      "id": "R08",
+      "name": "Head chef cannot open Finance (403)",
+      "section": "Access control (RBAC + ABAC)",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "id": "R09",
+      "name": "Head chef can manage inventory",
+      "section": "Access control (RBAC + ABAC)",
+      "ok": true,
+      "ms": 23
+    },
+    {
+      "id": "R10",
+      "name": "Head chef sees only the Kitchen department on Workforce",
+      "section": "Access control (RBAC + ABAC)",
+      "ok": true,
+      "ms": 12
+    },
+    {
+      "id": "R11",
+      "name": "Cashier can use the POS but not Finance",
+      "section": "Access control (RBAC + ABAC)",
+      "ok": true,
+      "ms": 13
+    },
+    {
+      "id": "R12",
+      "name": "Host sees masked guest phone numbers",
+      "section": "Access control (RBAC + ABAC)",
+      "ok": true,
+      "ms": 308
+    },
+    {
+      "id": "R13",
+      "name": "Line cook alerts limited to own station categories",
+      "section": "Access control (RBAC + ABAC)",
+      "ok": true,
+      "ms": 12
+    },
+    {
+      "id": "R14",
+      "name": "Non-owner cannot reach setup endpoints (403)",
+      "section": "Access control (RBAC + ABAC)",
+      "ok": true,
+      "ms": 1
+    },
+    {
+      "id": "R15",
+      "name": "Branch parameter injection is rejected (403)",
+      "section": "Access control (RBAC + ABAC)",
+      "ok": true,
+      "ms": 14
+    },
+    {
+      "id": "M01",
+      "name": "Dashboard returns 24 hourly points and branch scores",
+      "section": "Dashboards & live reads",
+      "ok": true,
+      "ms": 841
+    },
+    {
+      "id": "M02",
+      "name": "Kitchen view lists stations and live tickets",
+      "section": "Dashboards & live reads",
+      "ok": true,
+      "ms": 442
+    },
+    {
+      "id": "M03",
+      "name": "Vision lists cameras with heartbeat status",
+      "section": "Dashboards & live reads",
+      "ok": true,
+      "ms": 30
+    },
+    {
+      "id": "M04",
+      "name": "Food safety lists sensors with history",
+      "section": "Dashboards & live reads",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "id": "M05",
+      "name": "Staffing returns TPPH and hourly status",
+      "section": "Dashboards & live reads",
+      "ok": true,
+      "ms": 15
+    },
+    {
+      "id": "M06",
+      "name": "Live event stream opens for an authenticated user",
+      "section": "Dashboards & live reads",
+      "ok": true,
+      "ms": 17
+    },
+    {
+      "id": "P01",
+      "name": "All four periods render",
+      "section": "Reports, KRIs & forecasting",
+      "ok": true,
+      "ms": 1577
+    },
+    {
+      "id": "P02",
+      "name": "Owner scorecard has 23 KPIs with valid RAG states",
+      "section": "Reports, KRIs & forecasting",
+      "ok": true,
+      "ms": 1
+    },
+    {
+      "id": "P03",
+      "name": "KRIs have thresholds, owners and actions",
+      "section": "Reports, KRIs & forecasting",
+      "ok": true,
+      "ms": 0
+    },
+    {
+      "id": "P04",
+      "name": "Forecast: 7 days, each inside its 80% band",
+      "section": "Reports, KRIs & forecasting",
+      "ok": true,
+      "ms": 0
+    },
+    {
+      "id": "P05",
+      "name": "Forecast backtest error is under 15%",
+      "section": "Reports, KRIs & forecasting",
+      "ok": true,
+      "ms": 0
+    },
+    {
+      "id": "P06",
+      "name": "League table ranks are unique and complete",
+      "section": "Reports, KRIs & forecasting",
+      "ok": true,
+      "ms": 0
+    },
+    {
+      "id": "P07",
+      "name": "Menu engineering classes are valid",
+      "section": "Reports, KRIs & forecasting",
+      "ok": true,
+      "ms": 0
+    },
+    {
+      "id": "P08",
+      "name": "Branch-scoped report covers exactly one branch",
+      "section": "Reports, KRIs & forecasting",
+      "ok": true,
+      "ms": 110
+    },
+    {
+      "id": "P09",
+      "name": "Unknown period falls back to today",
+      "section": "Reports, KRIs & forecasting",
+      "ok": true,
+      "ms": 332
+    },
+    {
+      "id": "P10",
+      "name": "Summary uses the instance currency",
+      "section": "Reports, KRIs & forecasting",
+      "ok": true,
+      "ms": 0
+    },
+    {
+      "id": "P11",
+      "name": "Channel shares sum to ~100%",
+      "section": "Reports, KRIs & forecasting",
+      "ok": true,
+      "ms": 0
+    },
+    {
+      "id": "P12",
+      "name": "Budget is phased by weekday (Fri/Sat budget > Mon)",
+      "section": "Reports, KRIs & forecasting",
+      "ok": true,
+      "ms": 0
+    },
+    {
+      "id": "S01",
+      "name": "POS state lists tables, areas, menu, tenders and tax",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 0
+    },
+    {
+      "id": "S02",
+      "name": "Open an order on a free table",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 13
+    },
+    {
+      "id": "S03",
+      "name": "Opening the same table again returns the running order",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "id": "S04",
+      "name": "Unknown table is rejected (400)",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 4
+    },
+    {
+      "id": "S05",
+      "name": "Add items computes subtotal and tax split",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 4
+    },
+    {
+      "id": "S06",
+      "name": "Printing before the KOT is refused (400)",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "id": "S07",
+      "name": "Send KOT fires tickets grouped by station",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "id": "S08",
+      "name": "KOT with nothing new is refused (400)",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 15
+    },
+    {
+      "id": "S09",
+      "name": "Kitchen display shows the POS tickets",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 435
+    },
+    {
+      "id": "S10",
+      "name": "Cancelling a sent item without a reason is refused (400)",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 4
+    },
+    {
+      "id": "S11",
+      "name": "Cancelling with a reason works and is audited",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 24
+    },
+    {
+      "id": "S12",
+      "name": "Discount without a reason is refused (400)",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 11
+    },
+    {
+      "id": "S13",
+      "name": "10% discount with reason reduces the taxable value",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 15
+    },
+    {
+      "id": "S14",
+      "name": "Cashier cannot give more than 25% (403)",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "id": "S15",
+      "name": "Cashier cannot make an NC bill (403)",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 12
+    },
+    {
+      "id": "S16",
+      "name": "Print bill, then reprint is audited",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 30
+    },
+    {
+      "id": "S17",
+      "name": "Settlement with wrong tender total is refused (400)",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 14
+    },
+    {
+      "id": "S18",
+      "name": "Split-tender settlement issues a financial-year bill number",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 17
+    },
+    {
+      "id": "S19",
+      "name": "Settled bill appears in day end and frees the table",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 36
+    },
+    {
+      "id": "S20",
+      "name": "NC bill settles without a sale",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 77
+    },
+    {
+      "id": "S21",
+      "name": "Void requires a reason; voided order closes",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 38
+    },
+    {
+      "id": "S22",
+      "name": "Invalid channel is rejected (400)",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 15
+    },
+    {
+      "id": "S23",
+      "name": "Another branch's order is invisible to a branch manager (404)",
+      "section": "Point of sale",
+      "ok": true,
+      "ms": 34
+    },
+    {
+      "id": "K01",
+      "name": "Bumping a ticket marks it ready",
+      "section": "Kitchen display",
+      "ok": true,
+      "ms": 430
+    },
+    {
+      "id": "K02",
+      "name": "Line cook cannot bump another station (403)",
+      "section": "Kitchen display",
+      "ok": true,
+      "ms": 469
+    },
+    {
+      "id": "K03",
+      "name": "Unknown ticket returns 404",
+      "section": "Kitchen display",
+      "ok": true,
+      "ms": 15
+    },
+    {
+      "id": "N01",
+      "name": "Menu lists items with food cost and 7-day sales",
+      "section": "Kitchen display",
+      "ok": true,
+      "ms": 17
+    },
+    {
+      "id": "N02",
+      "name": "86 an item hides it from the POS, then restore",
+      "section": "Kitchen display",
+      "ok": true,
+      "ms": 97
+    },
+    {
+      "id": "N03",
+      "name": "Price guard rejects a price below cost × 1.25 (400)",
+      "section": "Kitchen display",
+      "ok": true,
+      "ms": 3
+    },
+    {
+      "id": "N04",
+      "name": "Price change is applied and audited, then reverted",
+      "section": "Kitchen display",
+      "ok": true,
+      "ms": 19
+    },
+    {
+      "id": "N05",
+      "name": "Head chef cannot change prices (403)",
+      "section": "Kitchen display",
+      "ok": true,
+      "ms": 15
+    },
+    {
+      "id": "I01",
+      "name": "Inventory returns stock, par, cover days and value",
+      "section": "Inventory & purchasing",
+      "ok": true,
+      "ms": 20
+    },
+    {
+      "id": "I02",
+      "name": "Every menu item has a recipe",
+      "section": "Inventory & purchasing",
+      "ok": true,
+      "ms": 0
+    },
+    {
+      "id": "I03",
+      "name": "Wastage without reason is refused (400)",
+      "section": "Inventory & purchasing",
+      "ok": true,
+      "ms": 10
+    },
+    {
+      "id": "I04",
+      "name": "Negative wastage quantity is refused (400)",
+      "section": "Inventory & purchasing",
+      "ok": true,
+      "ms": 3
+    },
+    {
+      "id": "I05",
+      "name": "Logging wastage lowers on-hand by exactly that amount",
+      "section": "Inventory & purchasing",
+      "ok": true,
+      "ms": 33
+    },
+    {
+      "id": "I06",
+      "name": "Raise a purchase order",
+      "section": "Inventory & purchasing",
+      "ok": true,
+      "ms": 12
+    },
+    {
+      "id": "I07",
+      "name": "Receiving the PO adds stock (GRN)",
+      "section": "Inventory & purchasing",
+      "ok": true,
+      "ms": 44
+    },
+    {
+      "id": "I08",
+      "name": "A received PO cannot be received twice (400)",
+      "section": "Inventory & purchasing",
+      "ok": true,
+      "ms": 1
+    },
+    {
+      "id": "I09",
+      "name": "Stock count resets on-hand and records variance",
+      "section": "Inventory & purchasing",
+      "ok": true,
+      "ms": 15
+    },
+    {
+      "id": "I10",
+      "name": "PO for an unknown vendor is refused (400)",
+      "section": "Inventory & purchasing",
+      "ok": true,
+      "ms": 9
+    },
+    {
+      "id": "V01",
+      "name": "Day sheet lists bookings and stats",
+      "section": "Reservations",
+      "ok": true,
+      "ms": 17
+    },
+    {
+      "id": "V02",
+      "name": "Booking without a name is refused (400)",
+      "section": "Reservations",
+      "ok": true,
+      "ms": 1
+    },
+    {
+      "id": "V03",
+      "name": "Create a booking with deposit",
+      "section": "Reservations",
+      "ok": true,
+      "ms": 14
+    },
+    {
+      "id": "V04",
+      "name": "Add a walk-in to the waitlist",
+      "section": "Reservations",
+      "ok": true,
+      "ms": 4
+    },
+    {
+      "id": "V05",
+      "name": "Seating a booking opens a POS order on that table",
+      "section": "Reservations",
+      "ok": true,
+      "ms": 22
+    },
+    {
+      "id": "V06",
+      "name": "Invalid status is refused (400)",
+      "section": "Reservations",
+      "ok": true,
+      "ms": 10
+    },
+    {
+      "id": "V07",
+      "name": "Mark a booking as no-show",
+      "section": "Reservations",
+      "ok": true,
+      "ms": 5
+    },
+    {
+      "id": "F01",
+      "name": "Day end summarises tax split and tenders",
+      "section": "Finance & compliance",
+      "ok": true,
+      "ms": 7
+    },
+    {
+      "id": "F02",
+      "name": "Closing the day is blocked while a table is open (400)",
+      "section": "Finance & compliance",
+      "ok": true,
+      "ms": 36
+    },
+    {
+      "id": "F03",
+      "name": "A day already closed cannot be closed again (409)",
+      "section": "Finance & compliance",
+      "ok": true,
+      "ms": 12
+    },
+    {
+      "id": "F04",
+      "name": "Tax register parts add up to the tax",
+      "section": "Finance & compliance",
+      "ok": true,
+      "ms": 20
+    },
+    {
+      "id": "F05",
+      "name": "Tally export is valid voucher XML with balanced ledgers",
+      "section": "Finance & compliance",
+      "ok": true,
+      "ms": 5
+    },
+    {
+      "id": "F06",
+      "name": "Reconciliation: expected = gross − commission − GST − TCS",
+      "section": "Finance & compliance",
+      "ok": true,
+      "ms": 33
+    },
+    {
+      "id": "F07",
+      "name": "Leakage staff risk scores are 0–100",
+      "section": "Finance & compliance",
+      "ok": true,
+      "ms": 44
+    },
+    {
+      "id": "F08",
+      "name": "Cashier cannot download Tally (403)",
+      "section": "Finance & compliance",
+      "ok": true,
+      "ms": 6
+    },
+    {
+      "id": "F09",
+      "name": "Area manager finance is limited to their branches",
+      "section": "Finance & compliance",
+      "ok": true,
+      "ms": 17
+    },
+    {
+      "id": "C01",
+      "name": "Catalog has 60+ connectors, India first",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "id": "C02",
+      "name": "Install a connector; secrets are returned masked",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 35
+    },
+    {
+      "id": "C03",
+      "name": "Unknown catalog id is refused (400)",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "id": "C04",
+      "name": "Mapping test transforms a sample payload",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "id": "C05",
+      "name": "Webhook delivers an order into sales",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "id": "C06",
+      "name": "Signed connector rejects a bad signature (401)",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 17
+    },
+    {
+      "id": "C07",
+      "name": "Signed connector accepts a valid HMAC signature",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "id": "C08",
+      "name": "ADMS rejects unregistered devices (403)",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "id": "C09",
+      "name": "ADMS punch from a registered eSSL device records attendance",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 54
+    },
+    {
+      "id": "C10",
+      "name": "Camera connector generates RTSP sub-stream URLs per channel",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 36
+    },
+    {
+      "id": "C11",
+      "name": "Branch manager cannot manage integrations (403)",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 11
+    },
+    {
+      "id": "G01",
+      "name": "Ingest without an API key is refused (401)",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 13
+    },
+    {
+      "id": "G02",
+      "name": "Order with items is recorded with tax",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "id": "G03",
+      "name": "Order with zero total is refused (400)",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 4
+    },
+    {
+      "id": "G04",
+      "name": "Attendance for an unknown employee is refused (400)",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 11
+    },
+    {
+      "id": "G05",
+      "name": "Reading for an unknown sensor is refused (400)",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 15
+    },
+    {
+      "id": "G06",
+      "name": "Three out-of-range readings raise a high cold-chain alert",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 104
+    },
+    {
+      "id": "G07",
+      "name": "Vision batch with heartbeats is accepted and updates camera health",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 3
+    },
+    {
+      "id": "G08",
+      "name": "A 2★ review raises a guest alert",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 15
+    },
+    {
+      "id": "G09",
+      "name": "Face check-in without consent is refused (403)",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 312
+    },
+    {
+      "id": "G10",
+      "name": "CSV import reports row-level errors",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 17
+    },
+    {
+      "id": "G11",
+      "name": "Malformed JSON is rejected (400)",
+      "section": "Integrations & connectors",
+      "ok": true,
+      "ms": 15
+    },
+    {
+      "id": "L01",
+      "name": "Acknowledge an alert",
+      "section": "Alerts",
+      "ok": true,
+      "ms": 31
+    },
+    {
+      "id": "L02",
+      "name": "Cannot acknowledge another branch's alert (404)",
+      "section": "Alerts",
+      "ok": true,
+      "ms": 33
+    },
+    {
+      "id": "L03",
+      "name": "Auditor cannot acknowledge (403)",
+      "section": "Alerts",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "id": "Q01",
+      "name": "Roster shows Maître plus specialists the role may use",
+      "section": "AI agents",
+      "ok": true,
+      "ms": 13
+    },
+    {
+      "id": "Q02",
+      "name": "Briefing returns findings",
+      "section": "AI agents",
+      "ok": true,
+      "ms": 6235
+    },
+    {
+      "id": "Q03",
+      "name": "Chat streams a plan and an answer (forecast question)",
+      "section": "AI agents",
+      "ok": true,
+      "ms": 437
+    },
+    {
+      "id": "Q04",
+      "name": "Line cook asking about sales gets no revenue figures",
+      "section": "AI agents",
+      "ok": true,
+      "ms": 20
+    },
+    {
+      "id": "Q05",
+      "name": "Over-long message is refused (400)",
+      "section": "AI agents",
+      "ok": true,
+      "ms": 15
+    },
+    {
+      "id": "T01",
+      "name": "Team list shows roles and permissions",
+      "section": "Team & access",
+      "ok": true,
+      "ms": 15
+    },
+    {
+      "id": "T02",
+      "name": "Short password is refused (400)",
+      "section": "Team & access",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "id": "T03",
+      "name": "Line cook without station is refused (400)",
+      "section": "Team & access",
+      "ok": true,
+      "ms": 22
+    },
+    {
+      "id": "T04",
+      "name": "Owner cannot deactivate themselves (400)",
+      "section": "Team & access",
+      "ok": true,
+      "ms": 30
+    },
+    {
+      "id": "T05",
+      "name": "Create and deactivate a user; deactivated user cannot sign in",
+      "section": "Team & access",
+      "ok": true,
+      "ms": 149
+    },
+    {
+      "id": "TG01",
+      "name": "Line cook cannot configure the bot (403)",
+      "section": "Telegram bot",
+      "ok": true,
+      "ms": 14
+    },
+    {
+      "id": "TG02",
+      "name": "A malformed bot token is refused (400)",
+      "section": "Telegram bot",
+      "ok": true,
+      "ms": 15
+    },
+    {
+      "id": "TG03",
+      "name": "IT admin connects the bot (webhook mode); token is masked in status",
+      "section": "Telegram bot",
+      "ok": true,
+      "ms": 27
+    },
+    {
+      "id": "TG04",
+      "name": "Webhook with the wrong secret is rejected (403)",
+      "section": "Telegram bot",
+      "ok": true,
+      "ms": 4
+    },
+    {
+      "id": "TG05",
+      "name": "An unlinked chat gets connect instructions, no data",
+      "section": "Telegram bot",
+      "ok": true,
+      "ms": 117
+    },
+    {
+      "id": "TG06",
+      "name": "Owner links a chat with a one-time code; bot confirms name and role",
+      "section": "Telegram bot",
+      "ok": true,
+      "ms": 133
+    },
+    {
+      "id": "TG07",
+      "name": "A used link code cannot link a second chat",
+      "section": "Telegram bot",
+      "ok": true,
+      "ms": 265
+    },
+    {
+      "id": "TG08",
+      "name": "Group chats are refused for privacy",
+      "section": "Telegram bot",
+      "ok": true,
+      "ms": 131
+    },
+    {
+      "id": "TG09",
+      "name": "Owner /sales returns money figures for all branches",
+      "section": "Telegram bot",
+      "ok": true,
+      "ms": 762
+    },
+    {
+      "id": "TG10",
+      "name": "Line cook: /sales is refused by role, /kitchen works",
+      "section": "Telegram bot",
+      "ok": true,
+      "ms": 674
+    },
+    {
+      "id": "TG11",
+      "name": "Branch manager cannot switch to another branch; can focus on own",
+      "section": "Telegram bot",
+      "ok": true,
+      "ms": 383
+    },
+    {
+      "id": "TG12",
+      "name": "/report 7d returns the management report",
+      "section": "Telegram bot",
+      "ok": true,
+      "ms": 348
+    },
+    {
+      "id": "TG13",
+      "name": "/alerts offers Acknowledge; tapping it acknowledges as the linked user",
+      "section": "Telegram bot",
+      "ok": true,
+      "ms": 273
+    },
+    {
+      "id": "TG14",
+      "name": "A plain-language question is answered by the AI agents",
+      "section": "Telegram bot",
+      "ok": true,
+      "ms": 548
+    },
+    {
+      "id": "TG15",
+      "name": "Status for a non-admin hides the token and other users' links",
+      "section": "Telegram bot",
+      "ok": true,
+      "ms": 17
+    },
+    {
+      "id": "TG16",
+      "name": "/unlink disconnects the chat",
+      "section": "Telegram bot",
+      "ok": true,
+      "ms": 250
+    }
+  ]
+}

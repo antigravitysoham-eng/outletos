@@ -1,0 +1,138 @@
+{
+  "version": "2026.11.2",
+  "description": "Single source of truth for vision rules. Loaded by the real edge agent (edge-agent/rules.py) and by the simulator's virtual edge agent (server/src/vision/rules.js). All timings are in seconds and are frame-rate independent.",
+  "fps": 2,
+  "heartbeat_s": 60,
+  "offline_after_s": 180,
+  "batch": {
+    "max_events": 50,
+    "max_wait_s": 5
+  },
+  "zones": {
+    "kitchen": {
+      "subzones": [
+        "station",
+        "sink",
+        "raw",
+        "door"
+      ],
+      "checks": [
+        "station",
+        "hairnet",
+        "apron",
+        "phone",
+        "handwash"
+      ]
+    },
+    "pass": {
+      "subzones": [
+        "station",
+        "sink",
+        "door"
+      ],
+      "checks": [
+        "station",
+        "gloves",
+        "hairnet",
+        "handwash"
+      ]
+    },
+    "storage": {
+      "subzones": [
+        "store",
+        "door"
+      ],
+      "checks": [
+        "access"
+      ]
+    },
+    "front": {
+      "subzones": [
+        "table",
+        "floor"
+      ],
+      "checks": [
+        "guest",
+        "phone"
+      ]
+    },
+    "entrance": {
+      "subzones": [
+        "door",
+        "host"
+      ],
+      "checks": [
+        "greeted",
+        "person"
+      ]
+    }
+  },
+  "rules": {
+    "station": {
+      "absent_after_s": 90,
+      "report_ok_every_s": 120,
+      "cooldown_s": 180
+    },
+    "ppe": {
+      "window_s": 6,
+      "min_observations": 5,
+      "bad_ratio": 0.6,
+      "cooldown_s": 120,
+      "report_ok_every_s": 60
+    },
+    "phone": {
+      "min_dwell_s": 5,
+      "cooldown_s": 90
+    },
+    "handwash": {
+      "sink_min_dwell_s": 20,
+      "grace_s": 45,
+      "triggers": [
+        "raw",
+        "door"
+      ]
+    },
+    "access": {
+      "restricted_hours": [
+        23,
+        7
+      ],
+      "cooldown_s": 300
+    },
+    "label": {
+      "cooldown_s": 600
+    },
+    "greeted": {
+      "max_wait_s": 60
+    },
+    "guest": {
+      "table_wait_s": 300,
+      "cooldown_s": 300
+    },
+    "spill": {
+      "min_persist_s": 10,
+      "clear_after_s": 15
+    },
+    "person": {
+      "report_every_s": 60
+    }
+  },
+  "ocr": {
+    "label": {
+      "engine": "paddleocr",
+      "model": "PP-OCRv5_mobile",
+      "trigger": "object 'label' seen in storage zone for 2 s",
+      "expired_if": "use-by date < today"
+    },
+    "display": {
+      "engine": "ssocr",
+      "fallback": "paddleocr",
+      "trigger": "every 60 s on cameras with a display_roi",
+      "emits": "POST /api/v1/readings with source 'ocr'"
+    }
+  },
+  "dropped": {
+    "label": "use-by OCR is not feasible from ceiling CCTV (characters < 1 px); use a label scan workflow",
+    "spill": "clear-liquid spills are not reliable from RGB CCTV"
+  }
+}

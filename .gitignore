@@ -1,0 +1,22 @@
+# dependencies and builds
+node_modules
+dist
+__pycache__
+*.pyc
+
+# local data: databases, logs, secrets
+server/data/
+*.db
+*.db-*
+*.log
+.env
+.env.*
+
+# promo video render intermediates (re-created by marketing/make_promo.py)
+marketing/build/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

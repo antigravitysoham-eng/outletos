@@ -1,0 +1,221 @@
+{
+  "bot": "spiceroute_ops_bot",
+  "base": "http://localhost:8788",
+  "ran": "2026-11-19T08:50:33.189Z",
+  "roles": [
+    {
+      "id": "owner",
+      "label": "Owner",
+      "scope": "all",
+      "perms": [
+        "dashboard.view",
+        "sales.view",
+        "finance.view",
+        "kitchen.view",
+        "vision.view",
+        "safety.view",
+        "staff.view",
+        "staff.pay",
+        "guests.view",
+        "guests.pii",
+        "reviews.view",
+        "alerts.view",
+        "alerts.ack",
+        "users.view",
+        "users.manage",
+        "integrations.manage",
+        "pos.bill",
+        "menu.manage",
+        "inventory.manage",
+        "reservations.manage",
+        "finance.close"
+      ]
+    },
+    {
+      "id": "area_manager",
+      "label": "Area Manager",
+      "scope": "assigned",
+      "perms": [
+        "dashboard.view",
+        "kitchen.view",
+        "vision.view",
+        "safety.view",
+        "staff.view",
+        "alerts.view",
+        "alerts.ack",
+        "sales.view",
+        "finance.view",
+        "staff.pay",
+        "guests.view",
+        "guests.pii",
+        "reviews.view",
+        "users.view",
+        "menu.manage",
+        "inventory.manage",
+        "reservations.manage",
+        "finance.close"
+      ]
+    },
+    {
+      "id": "branch_manager",
+      "label": "Branch Manager",
+      "scope": "assigned",
+      "perms": [
+        "dashboard.view",
+        "kitchen.view",
+        "vision.view",
+        "safety.view",
+        "staff.view",
+        "alerts.view",
+        "alerts.ack",
+        "sales.view",
+        "finance.view",
+        "staff.pay",
+        "guests.view",
+        "guests.pii",
+        "reviews.view",
+        "pos.bill",
+        "menu.manage",
+        "inventory.manage",
+        "reservations.manage",
+        "finance.close"
+      ]
+    },
+    {
+      "id": "head_chef",
+      "label": "Head Chef",
+      "scope": "assigned",
+      "perms": [
+        "dashboard.view",
+        "kitchen.view",
+        "vision.view",
+        "safety.view",
+        "staff.view",
+        "alerts.view",
+        "alerts.ack",
+        "inventory.manage"
+      ]
+    },
+    {
+      "id": "chef",
+      "label": "Line Cook",
+      "scope": "assigned",
+      "perms": [
+        "kitchen.view",
+        "safety.view",
+        "alerts.view"
+      ]
+    },
+    {
+      "id": "host",
+      "label": "Host / Front of House",
+      "scope": "assigned",
+      "perms": [
+        "guests.view",
+        "reviews.view",
+        "alerts.view",
+        "alerts.ack",
+        "reservations.manage",
+        "pos.bill"
+      ]
+    },
+    {
+      "id": "cashier",
+      "label": "Cashier / Captain",
+      "scope": "assigned",
+      "perms": [
+        "pos.bill",
+        "reservations.manage",
+        "guests.view",
+        "alerts.view"
+      ]
+    },
+    {
+      "id": "auditor",
+      "label": "Food Safety Auditor",
+      "scope": "all",
+      "perms": [
+        "vision.view",
+        "safety.view",
+        "alerts.view"
+      ]
+    },
+    {
+      "id": "it_admin",
+      "label": "IT / Integrations",
+      "scope": "all",
+      "perms": [
+        "integrations.manage",
+        "users.view"
+      ]
+    }
+  ],
+  "transcripts": [
+    {
+      "user": "owner",
+      "name": "Vikram",
+      "turns": [
+        {
+          "me": "/start P8R29NW7",
+          "bot": "✅ <b>Linked to OutletOS</b> as Vikram Mehta · Owner · 6 branches.\n\nHi Vikram. Ask me anything about your restaurants in plain words, or use a command:\n\n/sales · Today's sales vs yesterday, by branch\n/report · KPI report: /report today | yesterday | 7d | 14d\n/forecast · Today projection and next 7 days\n/alerts · Open alerts (approve acknowledgement here)\n/kitchen · Ticket times and slow stations\n/staff · On shift, late and absent\n/safety · Fridges and freezers out of range\n/health · Outlet Health Score by branch\n/branch · Choose a branch: /branch r1 or /branch all\n/notify · High-alert push: /notify on | off\n/whoami · Your role and what you can see\n/unlink · Disconnect this chat from OutletOS\n/help · What you can ask\n\nYou see what your role sees in OutletOS (Owner)."
+        },
+        {
+          "me": "/sales",
+          "bot": "💰 <b>Sales today</b> · Restaurant 1, Restaurant 2, Restaurant 3, Restaurant 4, Restaurant 5, Restaurant 6 · 14:20\n<b>₹12.60 L</b> +6.6% vs ₹11.81 L at this time yesterday\n955 orders · avg ₹1,319 · online 28.6%\n\n<b>Channels</b>\n• Dine-in: ₹7.78 L (399)\n• Takeaway: ₹1.22 L (172)\n• Zomato: ₹1.12 L (120)\n• Swiggy: ₹1.08 L (115)\n• Website: ₹93,320 (100)\n• ONDC: ₹40,760 (44)\n\n<b>Branches</b>\n• Restaurant 5: ₹3.41 L +62.7%\n• Restaurant 2: ₹2.27 L +22.5%\n• Restaurant 1: ₹2.02 L -11.4%\n• Restaurant 4: ₹1.82 L -10.3%\n• Restaurant 3: ₹1.61 L +7.6%\n• Restaurant 6: ₹1.46 L -28.9%"
+        },
+        {
+          "me": "/report 7d",
+          "bot": "📊 <b>Management report · Last 7 days</b>\nRestaurant 1, Restaurant 2, Restaurant 3, Restaurant 4, Restaurant 5, Restaurant 6 · vs previous 7 days\n\n• Net sales ₹1.77 Cr · −0.8% vs previous 7 days · +1.3% vs budget.\n• Prime cost 46.7% (food 30.5%, labour 16.1%) against a 60% target.\n• Restaurant 5 leads at +9.3% vs budget; Restaurant 3 trails at −7.0%.\n• 1 risk indicator in red: high alerts unresolved &gt; 30 min (now).\n• Next 7 days forecast ₹1.74 Cr (80% range ₹1.59 Cr–₹1.89 Cr), −0.2% vs budget.\n\n<b>KPIs off target (7/23)</b>\n🟠 Food cost %\n🟠 Orders per labour hour\n🟠 Sink visits after raw handling (audit)\n🟠 Cold chain in range\n🟠 Shift attendance\n🟠 On-time clock-ins\n🟠 Average review rating\n\n<b>Risk indicators</b>\n🟠 Cold-chain excursions\n🟠 Absenteeism\n🔴 High alerts unresolved &gt; 30 min (now)\n\nFull report: Reports & Analytics in OutletOS."
+        },
+        {
+          "me": "Which branch needs attention today?",
+          "bot": "<b>218 open alerts</b>, 61 high severity. By category: guest 4, camera &amp; access 35, speed 134, safety 30, people 15.\n\n• <b>MEDIUM</b> 2★ review on Swiggy · Restaurant 2 · 1 min ago\n• <b>MEDIUM</b> Dish waiting at pass &gt; 2 min (3× in 15 min) · Restaurant 4 · 53 min ago\n• <b>MEDIUM</b> Biryani running slow: Hyderabadi Chicken Biryani took 23 min · Restaurant 6 · Biryani · 58 min ago\n• <b>MEDIUM</b> Curry running slow: Dal Makhani took 17 min · Restaurant 6 · Curry · 59 min ago\n• <b>MEDIUM</b> Beverages running slow: Masala Chai took 7 min · Restaurant 4 · Beverages · 59 min ago\n\n<b>Health scores (lowest first):</b> Restaurant 4 87 · Restaurant 5 87 · Restaurant 6 87 · Restaurant 1 90 · Restaurant 2 90 · Restaurant 3 92. Group 89.\n\nRestaurant 4 (Hyderabad) is lowest; its weakest pillar is <b>hygiene</b> at 64%."
+        }
+      ]
+    },
+    {
+      "user": "manager.r1",
+      "name": "Priya",
+      "turns": [
+        {
+          "me": "/start G6VMVARS",
+          "bot": "✅ <b>Linked to OutletOS</b> as Priya Nair · Branch Manager · 1 branch.\n\nHi Priya. Ask me anything about your restaurants in plain words, or use a command:\n\n/sales · Today's sales vs yesterday, by branch\n/report · KPI report: /report today | yesterday | 7d | 14d\n/forecast · Today projection and next 7 days\n/alerts · Open alerts (approve acknowledgement here)\n/kitchen · Ticket times and slow stations\n/staff · On shift, late and absent\n/safety · Fridges and freezers out of range\n/health · Outlet Health Score by branch\n/branch · Choose a branch: /branch r1 or /branch all\n/notify · High-alert push: /notify on | off\n/whoami · Your role and what you can see\n/unlink · Disconnect this chat from OutletOS\n/help · What you can ask\n\nYou see what your role sees in OutletOS (Branch Manager)."
+        },
+        {
+          "me": "/kitchen",
+          "bot": "👨‍🍳 <b>Kitchen</b> · all stations\nLast hour: 66 tickets · avg 6 min · 86.4% on time\nOpen now: 10 · oldest Amritsari Fish (Fry) waiting 2 min\n\n<b>Running slow</b>\n• Jeera Rice · 5.4 min vs 5 (+8.4%)\n• Kadai Vegetables · 9.4 min vs 9 (+4.3%)\n• Dal Makhani · 8.1 min vs 8 (+1.4%)"
+        },
+        {
+          "me": "/branch r2",
+          "bot": "You don't have access to \"r2\". Send /branch to see yours."
+        },
+        {
+          "me": "/alerts",
+          "bot": "🚨 <b>29 open alerts</b> · 9 high\n🟠 Beverages running slow: Filter Coffee took 6 min\n    Restaurant 1 · Beverages · 81 min ago\n🟠 Tandoor running slow: Paneer Tikka took 21 min\n    Restaurant 1 · Tandoor · 111 min ago\n🔴 Station unattended (2× in 15 min)\n    Restaurant 1 · 112 min ago\n🟠 Dish waiting at pass &gt; 2 min (3× in 15 min)\n    Restaurant 1 · 113 min ago\n🟠 Biryani running slow: Subz Dum Biryani took 22 min\n    Restaurant 1 · Biryani · 117 min ago\n🔴 Freezer out of range: -14.0°C\n    Restaurant 1 · 120 min ago\n🟠 Beverages running slow: Sweet Lassi took 4 min\n    Restaurant 1 · Beverages · 120 min ago\n🟠 Curry running slow: Kadai Vegetables took 21 min\n    Restaurant 1 · Curry · 122 min ago",
+          "buttons": [
+            "✅ Acknowledge 8",
+            "Dismiss"
+          ]
+        }
+      ]
+    },
+    {
+      "user": "cook.r1",
+      "name": "Ravi",
+      "turns": [
+        {
+          "me": "/start FA47FYUR",
+          "bot": "✅ <b>Linked to OutletOS</b> as Ravi Kumar · Line Cook · 1 branch.\n\nHi Ravi. Ask me anything about your restaurants in plain words, or use a command:\n\n/report · KPI report: /report today | yesterday | 7d | 14d\n/alerts · Open alerts (approve acknowledgement here)\n/kitchen · Ticket times and slow stations\n/safety · Fridges and freezers out of range\n/branch · Choose a branch: /branch r1 or /branch all\n/notify · High-alert push: /notify on | off\n/whoami · Your role and what you can see\n/unlink · Disconnect this chat from OutletOS\n/help · What you can ask\n\nYou see what your role sees in OutletOS (Line Cook)."
+        },
+        {
+          "me": "/sales",
+          "bot": "🔒 Your role (Line Cook) doesn't include /sales. Send /help to see what you can ask."
+        },
+        {
+          "me": "/kitchen",
+          "bot": "👨‍🍳 <b>Kitchen</b> · Tandoor\nLast hour: 66 tickets · avg 6 min · 86.4% on time\nOpen now: 0"
+        }
+      ]
+    }
+  ]
+}

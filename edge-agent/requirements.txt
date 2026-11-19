@@ -1,0 +1,10 @@
+# core (all permissive licences)
+opencv-python-headless>=4.10
+numpy>=1.26
+onnxruntime>=1.20          # Jetson: onnxruntime-gpu from the Jetson AI Lab index; Intel: onnxruntime-openvino
+# optional OCR
+# paddleocr>=3.0           # PP-OCRv5 mobile, Apache-2.0: use-by labels, delivery tickets
+# fast-alpr>=0.3           # MIT, ONNX: number plates (drive-thru / delivery bay)
+# system package: ssocr    # 7-segment displays (apt install ssocr)
+# development only (AGPL-3.0, needs an Enterprise licence to ship closed-source)
+# ultralytics>=8.3

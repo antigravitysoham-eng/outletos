@@ -1,0 +1,134 @@
+{
+  "base": "http://localhost:8789",
+  "ran": "2026-11-19T08:56:21.535Z",
+  "passed": 18,
+  "total": 18,
+  "results": [
+    {
+      "id": "O01",
+      "name": "Fresh workspace reports needs_owner",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 73
+    },
+    {
+      "id": "O02",
+      "name": "Weak owner password is rejected",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 28
+    },
+    {
+      "id": "O03",
+      "name": "Invalid email is rejected",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 17
+    },
+    {
+      "id": "O04",
+      "name": "Owner account is created and signed in",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 72
+    },
+    {
+      "id": "O05",
+      "name": "A second owner cannot be created",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 22
+    },
+    {
+      "id": "O06",
+      "name": "Setup status is in progress after sign-up",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 3
+    },
+    {
+      "id": "O07",
+      "name": "Catalog lists 20 countries, business types, modules and connectors",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 15
+    },
+    {
+      "id": "O08",
+      "name": "Draft saves and resumes at the same step",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 17
+    },
+    {
+      "id": "O09",
+      "name": "Launch without a country is refused",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 17
+    },
+    {
+      "id": "O10",
+      "name": "Launch without outlets is refused",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 2
+    },
+    {
+      "id": "O11",
+      "name": "Launch builds a UAE tenant (VAT 5% inclusive, AED) with varied outlets and tables",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 128
+    },
+    {
+      "id": "O12",
+      "name": "Organisation config applied: AED currency, VAT inclusive, modules gated",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 16
+    },
+    {
+      "id": "O13",
+      "name": "Setup cannot be run twice",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 2
+    },
+    {
+      "id": "O14",
+      "name": "Invited users sign in with their temporary password and are scoped to their outlets",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 212
+    },
+    {
+      "id": "O15",
+      "name": "Connectors from setup are created, unknown ids ignored",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 20
+    },
+    {
+      "id": "O16",
+      "name": "POS on the new tenant shows custom table names and VAT",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 3
+    },
+    {
+      "id": "O17",
+      "name": "Cloud kitchen outlet has no tables",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 9
+    },
+    {
+      "id": "O18",
+      "name": "VAT-inclusive bill: tax is extracted, not added",
+      "section": "Onboarding",
+      "ok": true,
+      "ms": 53
+    }
+  ]
+}
